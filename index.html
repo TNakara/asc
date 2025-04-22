@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>アクセスログ記録中...</title>
   <script>
+     console.log("APIを呼び出します");
     // 地域を判別するAPI（無料）
     fetch("https://ipinfo.io?token=dec3c6abcf48d5")  // tokenはipinfo.ioで取得（無料）
       .then(res => res.json())
@@ -14,6 +15,7 @@
           ua: navigator.userAgent
         };
 
+        console.log("fetchを開始します");
         return fetch("https://script.google.com/macros/s/AKfycbyC4tSWjxR8RTzybw8kAMcYKgRfxxlB-Je6cQPj2vGdh4mf9b5rA1L0PwS9GVkXZT0tQg/exec", {
           method: "POST",
           headers: {
@@ -23,6 +25,7 @@
         });
       })
       .then(() => {
+         console.log("fetchはできていそう");
         // Googleフォームにリダイレクト
         window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSclr4_QnrrqU8WIKWuEmisDasZmV5ZqrCFnqCET45JNKpL4zw/viewform";
       })
