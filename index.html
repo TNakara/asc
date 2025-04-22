@@ -15,17 +15,17 @@
           ua: navigator.userAgent
         };
 
-        await fetch("★ここにGASのdoPost URL★", {
+        await fetch("https://script.google.com/macros/s/AKfycbzTrjyJxH2NuE0leKbeEvUoPYGuyemG7TTYeX9RqeZjgCLrKa2IAEXinyXTkHGo_OSfNw/exec", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
 
         // ログ完了後にリダイレクト
-        window.location.href = "★GoogleフォームのURL★";
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSclr4_QnrrqU8WIKWuEmisDasZmV5ZqrCFnqCET45JNKpL4zw/viewform";
       } catch (err) {
         console.error("ログ取得失敗:", err);
-        window.location.href = "★GoogleフォームのURL★"; // 失敗してもリダイレクト
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSclr4_QnrrqU8WIKWuEmisDasZmV5ZqrCFnqCET45JNKpL4zw/viewform"; // 失敗してもリダイレクト
       }
     }
 
