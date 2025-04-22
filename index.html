@@ -18,7 +18,7 @@
         console.log("fetchを開始します");
         return fetch("https://script.google.com/macros/s/AKfycbzRzXZL8sps2P_S4MxGQ95z5fLYnZWWmW4v0G1tQvqO9CLyP-gtES4jaoZHizvpmoYWpA/exec", {
           method: "POST",
-          
+           mode: "cors",
           headers: {
             "Content-Type": "application/json"
           },
