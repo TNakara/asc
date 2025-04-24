@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アクセスログ記録中...</title>
+  <script>
+     console.log("APIを呼び出します");
+    // 地域を判別するAPI（無料）
+    fetch("https://ipinfo.io?token=dec3c6abcf48d5")  // tokenはipinfo.ioで取得（無料）
+      .then(res => res.json())
+      .then(info => {
+        const data = {
+          ip: info.ip,
+          region: info.region,
+          ua: navigator.userAgent
+        };
+
+        console.log("fetchを開始します");
+        return fetch("https://script.google.com/macros/s/AKfycbwhvDOs1yx77ScNJ-cvj2vE4u1pozcYfAgFzpO5cxbIBRqo0I6pRRiarGf0Qz7Z1NDdgQ/exec?v=5", {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+      })
+      .then(() => {
+         console.log("fetchはできていそう");
+        // Googleフォームにリダイレクト
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSclr4_QnrrqU8WIKWuEmisDasZmV5ZqrCFnqCET45JNKpL4zw/viewform";
+      })
+      .catch(err => {
+        console.error("ログ送信失敗:", err);
+        // 失敗してもフォームへ進める
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSclr4_QnrrqU8WIKWuEmisDasZmV5ZqrCFnqCET45JNKpL4zw/viewform";
+      });
+  </script>
+</head>
+<body>
+  <p>Googleフォームへ移動しています...</p>
+</body>
+</html>
