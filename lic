@@ -12,7 +12,8 @@
         const data = {
           ip: info.ip,
           region: info.region,
-          ua: navigator.userAgent
+          ua: navigator.userAgent,
+          pg: ’Lic’
         };
 
         console.log("fetchを開始します");
@@ -28,12 +29,12 @@
       .then(() => {
          console.log("fetchはできていそう");
         // Googleフォームにリダイレクト
-        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSclr4_QnrrqU8WIKWuEmisDasZmV5ZqrCFnqCET45JNKpL4zw/viewform";
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSczLSQrzYtiTyZfyGWqpJZWvxkkwyYm2eVLmJvSXDF9Vq6SHA/viewform?usp=header";
       })
       .catch(err => {
         console.error("ログ送信失敗:", err);
         // 失敗してもフォームへ進める
-        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSclr4_QnrrqU8WIKWuEmisDasZmV5ZqrCFnqCET45JNKpL4zw/viewform";
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSczLSQrzYtiTyZfyGWqpJZWvxkkwyYm2eVLmJvSXDF9Vq6SHA/viewform?usp=header";
       });
   </script>
 </head>
